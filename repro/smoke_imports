@@ -1,0 +1,55 @@
+from __future__ import annotations
+
+import importlib
+import sys
+from pathlib import Path
+
+
+def main() -> None:
+    root = Path(__file__).resolve().parents[1]
+    if str(root) not in sys.path:
+        sys.path.insert(0, str(root))
+
+    third_party = [
+        "numpy",
+        "pandas",
+        "sklearn",
+        "torch",
+        "torchvision",
+        "wfdb",
+        "neurokit2",
+        "PIL",
+        "xgboost",
+    ]
+    project = [
+        "scripts.mtfusion",
+        "scripts.waveform_fusion_models",
+        "scripts.run_waveform_manuscript_experiments",
+        "scripts.run_cohortB_stagebi_5splits_externalA",
+    ]
+
+    missing_tp: list[str] = []
+    for m in third_party:
+        try:
+            importlib.import_module(m)
+        except Exception:
+            missing_tp.append(m)
+
+    failed_proj: list[str] = []
+    for m in project:
+        try:
+            importlib.import_module(m)
+        except Exception as e:
+            failed_proj.append(f"{m}: {type(e).__name__}({e})")
+
+    if missing_tp:
+        print("Note: missing third-party deps (expected in a fresh env): " + ", ".join(missing_tp))
+    if failed_proj:
+        raise SystemExit("Project import smoke test failed:\n- " + "\n- ".join(failed_proj))
+
+    print("OK: project imports succeeded")
+
+
+if __name__ == "__main__":
+    main()
+
