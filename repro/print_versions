@@ -1,0 +1,34 @@
+from __future__ import annotations
+
+import platform
+import sys
+
+
+def _try_version(modname: str) -> str:
+    try:
+        mod = __import__(modname)
+        return getattr(mod, "__version__", "unknown")
+    except Exception:
+        return "not-installed"
+
+
+def main() -> None:
+    print(f"python={sys.version.split()[0]}")
+    print(f"platform={platform.platform()}")
+    for m in [
+        "numpy",
+        "pandas",
+        "sklearn",
+        "torch",
+        "torchvision",
+        "wfdb",
+        "neurokit2",
+        "PIL",
+        "xgboost",
+    ]:
+        print(f"{m}={_try_version(m)}")
+
+
+if __name__ == "__main__":
+    main()
+
