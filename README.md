@@ -27,16 +27,8 @@ python repro/print_versions.py
 ```
 
 ## Running the main pipelines (data required)
-### Cohort A (imaging report)
 
-Subset generation + scaling experiment runner:
-
-```bash
-python scripts/prepare_cohortA_scaling_subsets.py --help
-python scripts/run_cohortA.py --help
-```
-
-### Cohort B (digital waveforms)
+### Cohort (digital waveforms)
 
 Entry point:
 
@@ -60,7 +52,7 @@ python scripts/run_cohortB_waveform.py \
 
 Outputs go under `results/cohortB_waveform/` by default.
 
-### Cohort B (image ECG scans + tabular fusion)
+### Cohort (image ECG scans + tabular fusion)
 
 Entry point:
 
