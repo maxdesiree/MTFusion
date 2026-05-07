@@ -15,10 +15,10 @@ An `.npz` with keys:
 - vitals: (N, n_vitals)         float32
 - labels: (N,)                  int64  (zero-based)
 
-This script supports three ECG feature sources:
-1) `intervals` (recommended): extract clinically standard ECG intervals from WFDB waveforms
+This script supports one of three ECG feature sources:
+1) `intervals`: extract clinically standard ECG intervals from WFDB waveforms
    (PR, QRS, QT, QTc, ST deviation, RR; in milliseconds).
-2) `pixels` (fallback): compute simple geometry/slope features from JSON plotted pixels.
+2) `pixels`: compute simple geometry/slope features from JSON plotted pixels.
 3) `image`: same per-lead pixel-geometry features as `pixels`, but traces are recovered from
    12-lead ECG printout JPG/PNG scans (default 3×4 lead layout).
 
