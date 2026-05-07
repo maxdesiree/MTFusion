@@ -27,7 +27,7 @@ python repro/print_versions.py
 ```
 
 ## Running the main pipelines (data required)
-### Cohort A (N=353; denoised waveforms, multi-label rhythm)
+### Cohort A (imaging report)
 
 Subset generation + scaling experiment runner:
 
@@ -36,7 +36,7 @@ python scripts/prepare_cohortA_scaling_subsets.py --help
 python scripts/run_cohortA_multilabel_scaling.py --help
 ```
 
-### Cohort B (digital ECG WFDB waveforms + tabular fusion)
+### Cohort B (digital waveforms)
 
 Entry point:
 
