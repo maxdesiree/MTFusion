@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it."
+title: "Delay Modality Compression with MTFusion"
+type: software
+authors:
+  - name: "EnhancedMCA Contributors"
+repository-code: "https://github.com/<OWNER>/<REPO>"
+license: "MIT"
+keywords:
+  - "multimodal"
+  - "fusion"
+  - "ECG"
+  - "transformer"

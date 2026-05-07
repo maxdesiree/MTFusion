@@ -1,0 +1,11 @@
+numpy
+scikit-learn
+torch
+torchvision
+pandas
+openpyxl
+wfdb
+neurokit2
+Pillow
+xgboost
+iterative-stratification
