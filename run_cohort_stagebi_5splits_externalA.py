@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-**Cohort B — RGB ECG scans (images), not WFDB waveforms.** For digital 12-lead waveform + tabular
+**Cohort — RGB ECG scans (images), not WFDB waveforms.** For digital 12-lead waveform + tabular
 fusion, use ``scripts/run_cohortB_waveform.py`` (or ``run_waveform_manuscript_experiments.py``).
 
-Cohort B (ImageDKD, stage_bi): stratified cross-validation on the internal cohort.
+Cohort (ImageDKD, stage_bi): stratified cross-validation on the internal cohort.
 
 - Default: **StratifiedKFold** with ``n_splits=5`` (each fold ~80%% train / 20%% validation).
 - Deep models: optional **early stopping** on the validation fold (default: maximize val AUROC,
@@ -21,7 +21,7 @@ Cohort B (ImageDKD, stage_bi): stratified cross-validation on the internal cohor
   (default: 42, independent of ``--seed``). Change ``--seed`` alone to rerun with new PyTorch /
   training RNG while keeping the same fold boundaries (needed when using ``--merge-csv``).
 
-Classical baselines (LogReg, XGBoost): 129-D (scaled 120-D geometry + tabular), unless
+Classical baselines: 129-D (scaled 120-D geometry + tabular), unless
 ``--deep-only``.
 
 Deep models: ResNet50 on RGB ECG scans (224×224) + tabular — Concat, Single-Attn, MTFusion,
