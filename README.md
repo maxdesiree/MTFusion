@@ -33,7 +33,7 @@ Subset generation + scaling experiment runner:
 
 ```bash
 python scripts/prepare_cohortA_scaling_subsets.py --help
-python scripts/run_cohortA_multilabel_scaling.py --help
+python scripts/run_cohortA.py --help
 ```
 
 ### Cohort B (digital waveforms)
