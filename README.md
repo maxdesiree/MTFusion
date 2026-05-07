@@ -1,23 +1,12 @@
-# enhancedMCA (code-only, reproducible runs)
+# Delaying Modality Compression with Multi-Token Fusion for Limited Physiological Datasets
 
-This repository contains the **model code and experiment runners** for the EnhancedMCA project.
-It is intentionally **code-only** for GitHub reproducibility: **no data** and no large artifacts are
-tracked.
+This repository contains the **model code and experiment runners**.
+It is intentionally **code-only** for GitHub reproducibility.
 
 ## What’s in here
 
 - `scripts/`: training/evaluation entrypoints and model definitions (PyTorch + sklearn baselines).
-- `repro/`: no-data reproducibility helpers (imports + version printout).
-
-## What’s NOT in here
-
-The following are **expected locally** but are **ignored by git**:
-
-- `data/` (generated `.npz` files, cohort manifests, etc.)
-- `all_records/` (WFDB waveform tree of `.hea/.dat`)
-- `ProcessedData/` (image scans)
-- `results/` (logs, CSV/TeX outputs)
-- `.venv/` (local environment)
+- `repro/`: no-data reproducibility helpers (imports + version printout). private dataset available upon reseanable request.
 
 ## Environment setup
 
@@ -29,7 +18,6 @@ source .venv/bin/activate
 python -m pip install -U pip
 pip install -r requirements.txt
 ```
-
 Sanity check (no data required):
 
 ```bash
@@ -38,7 +26,6 @@ python repro/print_versions.py
 ```
 
 ## Running the main pipelines (data required)
-
 ### Cohort A (N=353; denoised waveforms, multi-label rhythm)
 
 Subset generation + scaling experiment runner:
@@ -91,10 +78,4 @@ python scripts/run_cohortB_stagebi_5splits_externalA.py \
   --splits 5 \
   --device cpu
 ```
-
-## Notes for GitHub upload
-
-- Add this folder to git (`git init`) and commit **only** `scripts/`, `repro/`, `README.md`,
-  `requirements.txt`, `LICENSE`, `CITATION.cff`, and `.gitignore`.
-- Keep your private data locally; `.gitignore` excludes common data/output paths by default.
 
