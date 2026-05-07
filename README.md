@@ -1,6 +1,7 @@
 # Delaying Modality Compression with Multi-Token Fusion for Limited Physiological Datasets
 
 This repository contains the **model code and experiment runners**.
+The manuscript is submitted to the ICONIP 2026, Melbourne, Australia.
 It is intentionally **code-only** for GitHub reproducibility.
 
 ## What’s in here
