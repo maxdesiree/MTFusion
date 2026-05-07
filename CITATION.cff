@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it."
-title: "Delay Modality Compression with MTFusion"
+title: "Delaying Modality Compression with Multi-Token Fusion for Limited Physiological Datasets"
 type: software
 authors:
-  - name: "EnhancedMCA Contributors"
+  - name: "Ngoc M To et al."
 repository-code: "https://github.com/<OWNER>/<REPO>"
 license: "MIT"
 keywords:
