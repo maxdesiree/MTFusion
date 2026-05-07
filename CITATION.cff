@@ -7,7 +7,6 @@ authors:
 repository-code: "https://github.com/<OWNER>/<REPO>"
 license: "MIT"
 keywords:
-  - "multimodal"
-  - "fusion"
-  - "ECG"
-  - "transformer"
+  - "multimodal fusion"
+  - "multi-token representation"
+  - "ECG-based AI"
